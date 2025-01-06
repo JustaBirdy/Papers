@@ -1,0 +1,4 @@
+1.交叉注意力机制（Cross Attention）用于处理两个语句序列之间的语义关系，交叉注意力机制将其中一个序列当作查询（query），另外一个序列当作键（key）和值（value），以此来计算两个句子之间的注意力权重。交叉注意力机制最初用于机器翻译领域用于捕捉句子之间的依赖关系，但近年来，越来越多的学者尝试将交叉注意
+  力机制应用在处理多模态问题上(X. Wei, T. Zhang, Y. Li, Y. Zhang and F. Wu, "Multi-Modality Cross Attention Network for Image and Sentence Matching," Jin Zhang, Xiaohai He, Yan Liu, Qingyan Cai, Honggang Chen, Linbo Qing, Multi-modal cross-attention network for Alzheimer’s 
+  disease diagnosis with multi-modality data). 以此来更好地捕捉多模态数据之间的交互信息，非常适合用于多种模态之间具有强相关性的任务。据查询，目前领域内还没有充分研究过在情感识别问题上采用交叉注意力机制的课题，因此本研究采用交叉注意力机制来尝试提升多模态情感识别的效果以填补这一空缺。
+2.
