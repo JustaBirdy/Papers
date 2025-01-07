@@ -2,5 +2,20 @@
   力机制应用在处理多模态问题上(X. Wei, T. Zhang, Y. Li, Y. Zhang and F. Wu, "Multi-Modality Cross Attention Network for Image and Sentence Matching," Jin Zhang, Xiaohai He, Yan Liu, Qingyan Cai, Honggang Chen, Linbo Qing, Multi-modal cross-attention network for Alzheimer’s 
   disease diagnosis with multi-modality data). 以此来更好地捕捉多模态数据之间的交互信息，非常适合用于多种模态之间具有强相关性的任务。据查询，目前领域内还没有充分研究过在情感识别问题上采用交叉注意力机制的课题，因此本研究采用交叉注意力机制来尝试提升多模态情感识别的效果以填补这一空缺。注意交叉注
   意力要求输入的序列特征要进行对齐，因此在特征抽取后要进行padding。
-2.图像模态（人脸识别）：ConvNeXt  音频模态：XVector  文字模态：GRU
-3. 参考：AVaTER: Fusing Audio, Visual, and Textual Modalities Using Cross-Modal Attention for Emotion Recognition
+
+2.
+图像模态（人脸识别）：ConvNeXt  
+ConvNeXt由Meta AI（前Facebook AI）的研究人员在2022年提出，是一个向transformer网络靠拢的cnn模型，结合了CNN与Transformer的优点，ConvNeXt设计的核心目标是结合Transformer模型中的设计理念，如大 kernel size、层归一化位置、 MLP结构等，来升级传统的卷积神经网络架构，从而在不牺牲效率的情况下，达到或
+超越基于Transformer的模型的性能。在多个标准基准测试上，包括ImageNet分类、COCO目标检测和ADE20K语义分割等，ConvNeXt展示出了与最先进的Transformer模型相当甚至更好的性能，同时保持了训练和推理的高效性。它的成功证明了经过精心设计的卷积网络依然具有强大的竞争力，并且在某些场景下可能比Transformer更为优
+越，尤其是在计算资源有限的环境下。由于其出色的性能和效率，ConvNeXt已被广泛应用于图像分类、物体检测、语义分割以及其他计算机视觉任务中，成为研究者和工程师的一个重要工具箱成员，尤其是在追求高精度和实时处理的应用场景下。
+音频模态：XVector
+XVector由Snyder等人在2018年提出，XVector使用延时神经网络(TDNN)来学习时间上下文信息。它在说话人识别任务上进行训练，最后一层隐藏层的输出作为说话人的表示，称为x-vector。得益于其网络中的statistics pooling层，X-Vector结构的关键思想是将语音信号转换
+成固定维度的向量表示，通过学习这些向量表示之间的相似性和差异性，实现语音识别和说话人鉴别等任务。通过在大规模数据集上预训练X-Vector模型，可以从输入纯语音信号中学习出更丰富、更具抽象性的语音特征，从而提高语音识别的性能。这一点使得XVector成为了一个强
+大的特征抽取器，非常适合应用于多模态任务的研究。
+文字模态：GRU
+GRU（Gated Recurrent Unit，门控循环单元）是一种循环神经网络（Recurrent Neural Network, RNN）变体，旨在处理序列数据，广泛的应用在自然语言处理任务如机器翻译与情感识别中。GRU在LSTM（Long Short-Term Memory，长短期记忆网络）的基础上进行了简化，引入了更少的参数量和结构复杂度。GRU通过使用门控机制有效解决了传统RNN存在的梯度消失和梯度爆炸问题，尤其适
+合处理长时间依赖的数据。GRU的设计目的是在保持计算效率的同时，拥有较高的性能，适用于广泛的序列处理任务。作为一个轻量化的模型，能够提升多模态情感识别模型的响应速率，达成实时识别的效果，因此很适合应用在本研究中处理文本数据。
+3. 参考：
+AVaTER: Fusing Audio, Visual, and Textual Modalities Using Cross-Modal Attention for Emotion Recognition
+Z. Liu, H. Mao, C. -Y. Wu, C. Feichtenhofer, T. Darrell and S. Xie, "A ConvNet for the 2020s," 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), New Orleans, LA, USA, 2022, pp. 11966-11976, doi: 10.1109/CVPR52688.2022.01167.
+D. Snyder, D. Garcia-Romero, G. Sell, D. Povey and S. Khudanpur, "X-Vectors: Robust DNN Embeddings for Speaker Recognition," 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Calgary, AB, Canada, 2018, pp. 5329-5333, doi: 10.1109/ICASSP.2018.8461375.
