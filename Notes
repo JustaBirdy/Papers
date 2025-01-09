@@ -20,4 +20,7 @@ AVaTER: Fusing Audio, Visual, and Textual Modalities Using Cross-Modal Attention
 Z. Liu, H. Mao, C. -Y. Wu, C. Feichtenhofer, T. Darrell and S. Xie, "A ConvNet for the 2020s," 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), New Orleans, LA, USA, 2022, pp. 11966-11976, doi: 10.1109/CVPR52688.2022.01167.
 D. Snyder, D. Garcia-Romero, G. Sell, D. Povey and S. Khudanpur, "X-Vectors: Robust DNN Embeddings for Speaker Recognition," 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Calgary, AB, Canada, 2018, pp. 5329-5333, doi: 10.1109/ICASSP.2018.8461375.
 
-4.数据同步：z-score归一化
+4.特征缩放：z-score归一化
+5.数据降维：面部数据PCA，音频和图片LDA，AutoEncoders
+6.数据同步：Dynamic Time Warping动态时间规划，Canonical Correlation Analysis典型相关分析
+7.Tensor Fusion Network for Multimodal Sentiment Analysis，采用了与早期融合和晚期融合不同的方式，使用笛卡尔积来计算模态间的交互信息
